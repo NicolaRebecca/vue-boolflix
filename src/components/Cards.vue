@@ -1,0 +1,31 @@
+<template>
+<div class="cards-container">
+    <div class="cards-details">
+        <img :src="poster_path" alt="">
+        <h5>{{ title }}</h5>
+        <div class="original_launguage">{{ original_language }}</div>  
+        <div class="vote">{{ vote_average}}</div>     
+    </div>
+</div>
+</template>
+
+
+<script>
+export default {
+    name: 'Cards',
+    props: {
+        poster_path: String,
+        title: String,
+        original_title: String,
+        original_language: String,
+        vote_average: Number
+    }
+}
+</script>
+
+
+<style lang="scss">
+
+
+
+</style>
