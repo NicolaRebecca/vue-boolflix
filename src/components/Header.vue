@@ -3,7 +3,7 @@
     <div class="header-container row">
         <div class="logo-container col-6">
             <div class="logo-content">
-                <img src="../assets/logo.png" alt="logo-Netflix">   
+                <a href="main.vue"><img src="../assets/logo.png" alt="logo-Netflix"> </a>  
             </div>
               <div class="nav">
                     <ul>
@@ -21,7 +21,7 @@
             <div class="icon-content">
                 <ul>
                     <li><input type="text" placeholter="search" v-model="searchString" @keyup.enter="$emit('search', searchString)"></li>
-                    <li><i class="fas fa-search"></i></li>
+                    <li><i class="fas fa-search" @click="$emit('search', searchString)"></i></li>
                     <li>BAMBINI</li>
                     <li><i class="fas fa-bell"></i></li>
                 </ul>

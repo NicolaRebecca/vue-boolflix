@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header @search="searchMovies" />
-    <Main :cards='filteredMovies' />
+    <Main :cards="cards" />
   </div>
 </template>
 

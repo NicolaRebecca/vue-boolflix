@@ -4,7 +4,7 @@
         <div class="row">
             <Cards class="cover col" 
             v-for=" cards in cards" :key="cards.id" 
-            :poster_path="cards.poster_path"
+            :poster_path="cards.poster_path" 
             :title="cards.title" 
             :original_title="cards.original_title" 
             :original_language="cards.original_language" 
@@ -35,6 +35,10 @@ export default {
 
 .container-fluid{
     background-color:rgb(77, 75, 75)
+}
+
+.cover:hover{
+    background-color: gray;
 }
 
 
