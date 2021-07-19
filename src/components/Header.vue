@@ -5,7 +5,7 @@
             <div class="logo-content">
                 <a href="main.vue"><img src="../assets/logo.png" alt="logo-Netflix"> </a>  
             </div>
-              <div class="nav">
+              <div class="nav col-12">
                     <ul>
                         <li>Home</li>
                         <li>Serie Tv</li>
@@ -17,7 +17,7 @@
                 </div>
         </div>
 
-       <div class="icon-container col-6">
+       <div class="icon-container col ">
             <div class="icon-content">
                 <ul>
                     <li><input type="text" placeholter="search" v-model="searchString" @keyup.enter="$emit('search', searchString)"></li>
@@ -65,7 +65,7 @@ export default {
 
         .logo-content{
             img{
-                width: 20vh;
+                width: 200px;
             }
         }
         

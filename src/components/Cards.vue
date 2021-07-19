@@ -1,10 +1,14 @@
 <template>
 <div class="cards-container">
     <div class="cards-details">
-        <img :src='generateImg' alt="poster">
-        <h5>{{ title }}</h5>
-        <div class="original_launguage">{{ original_language }}</div>  
-        <div class="vote">{{ vote_average}}</div>     
+        <div class="movie-poster" @mouseover="hover=true" @mouseleave="hover=false">
+            <img :src='generateImg' alt="poster">
+        </div>
+        <div class="movie-details" v-if="hover" >
+            <h5>{{ title }}</h5>
+            <div class="original_launguage">Language: {{ original_language }}</div>  
+            <div class="vote">Score: {{ vote_average}}</div> 
+        </div>
     </div>
 </div>
 </template>
@@ -22,9 +26,14 @@ export default {
     },
     computed:{
         generateImg(){
-            return 'https://image.tmdb.org/t/p/w342/' + this.poster_path
+            return 'https://image.tmdb.org/t/p/w342' + this.poster_path
         }
-    }
+    },
+    data(){
+        return{
+            hover:false,
+        }
+    },
 }
 </script>
 
@@ -32,7 +41,25 @@ export default {
 <style lang="scss" scoped>
 
 .cards-container{
-    width: 350px;
+    margin:30px 25px;
+    position: relative;
+    max-width: 320px;
+
+
+    .movie-details{
+        width: 340px;
+        text-align: center;
+        color:rgb(255, 255, 255);
+        position: absolute;
+        bottom:150px;
+        background-color: rgba(96, 97, 99, 0.658);
+    }
+
+
+
+
+
+
 }
 
 
