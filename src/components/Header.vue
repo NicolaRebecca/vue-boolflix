@@ -19,9 +19,12 @@
 
        <div class="icon-container col-6">
             <div class="icon-content">
-               <li><i class="fas fa-search"></i></li>
-                <li>BAMBINI</li>
-                <li><i class="fas fa-bell"></i></li>
+                <ul>
+                    <li><input type="text" placeholter="search" v-model="searchString" @keyup.enter="$emit('search', searchString)"></li>
+                    <li><i class="fas fa-search"></i></li>
+                    <li>BAMBINI</li>
+                    <li><i class="fas fa-bell"></i></li>
+                </ul>
             </div>
        </div> 
     </div>   
@@ -31,7 +34,12 @@
 
 <script>
 export default {
-    name: 'Header'
+    name: 'Header',
+    data() {
+        return{
+            searchString: "",
+        }
+    },
 }
 </script>
 

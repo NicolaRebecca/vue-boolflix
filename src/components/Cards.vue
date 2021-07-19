@@ -1,7 +1,7 @@
 <template>
 <div class="cards-container">
     <div class="cards-details">
-        <img :src="poster_path" alt="">
+        <img :src='generateImg' alt="poster">
         <h5>{{ title }}</h5>
         <div class="original_launguage">{{ original_language }}</div>  
         <div class="vote">{{ vote_average}}</div>     
@@ -19,13 +19,17 @@ export default {
         original_title: String,
         original_language: String,
         vote_average: Number
+    },
+    computed:{
+        generateImg(){
+            return 'https://image.tmdb.org/t/p/w342/' + this.poster_path
+        }
     }
 }
 </script>
 
 
 <style lang="scss">
-
 
 
 </style>

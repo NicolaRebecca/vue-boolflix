@@ -1,8 +1,8 @@
 <template>
     
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <Cards class="cover" 
+            <Cards class="cover col" 
             v-for=" cards in cards" :key="cards.id" 
             :poster_path="cards.poster_path"
             :title="cards.title" 
@@ -24,13 +24,18 @@ export default {
         Cards
     },
     props:{
-        cards: Array
+        cards: Array,
+        filteredMovies: Array
     }
 }
 </script>
 
 
 <style lang="scss">
+
+.container-fluid{
+    background-color:rgb(77, 75, 75)
+}
 
 
 </style>
