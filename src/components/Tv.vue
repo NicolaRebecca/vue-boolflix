@@ -1,17 +1,17 @@
 <template>
-<div class="cards-container">
+<div class="tv-container">
     <div class="cards-details">
         <div class="movie-poster" @mouseover="hover=true" @mouseleave="hover=false">
             <img :src='generateImg' alt="poster">
         </div>
-        <div class="movie-details" v-if="hover" >
-            <h5>{{ title }}</h5>
+        <div class="tv-details" v-if="hover" >
+            <h5>{{ original_name }}</h5>
             <div class="original_launguage">
                 Original Language: 
                 <flag v-if="original_language == 'en'" iso="us" />
                 <flag v-else :iso="original_language" />
             </div>  
-            <div class="vote">Score: {{ vote_average}}</div> 
+            <div class="vote">Score: {{ vote_average }}</div> 
         </div>
     </div>
 </div>
@@ -23,11 +23,10 @@
 
 
 export default {
-    name: 'Cards',
+    name: 'Tv',
     props: {
         poster_path: String,
-        title: String,
-        original_title: String,
+        original_name: String,
         original_language: String,
         vote_average: Number
     },
@@ -47,13 +46,13 @@ export default {
 
 <style lang="scss" scoped>
 
-.cards-container{
+.tv-container{
     margin:30px 25px;
     position: relative;
     max-width: 320px;
 
 
-    .movie-details{
+    .tv-details{
         width: 340px;
         text-align: center;
         color:rgb(255, 255, 255);
@@ -62,12 +61,6 @@ export default {
         background-color: rgba(96, 97, 99, 0.658);
     }
 
-
-
-
-
-
 }
-
 
 </style>

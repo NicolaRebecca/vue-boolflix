@@ -7,9 +7,9 @@
             </div>
               <div class="nav col-12">
                     <ul>
-                        <li>Home</li>
-                        <li>Serie Tv</li>
-                        <li>Film</li>
+                        <li> <a href="main.vue">Home</a> </li>
+                        <li><a href="#tv">Serie Tv</a> </li>
+                        <li><a href="#movie">Film</a></li>
                         <li>Originali</li>
                         <li>Aggiunti di recente</li>
                         <li>La mia lista</li>
@@ -49,6 +49,11 @@ export default {
         color:white;
         background-color: rgb(37, 37, 37);
         height: 80px;
+
+        a{
+            text-decoration: none;
+            color:white;
+        }
 
 
         li{
