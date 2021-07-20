@@ -6,7 +6,11 @@
         </div>
         <div class="movie-details" v-if="hover" >
             <h5>{{ title }}</h5>
-            <div class="original_launguage">Language: {{ original_language }}</div>  
+            <div class="original_launguage">
+                Original Language: 
+                <flag v-if="original_language == 'en'" iso="us" />
+                <flag v-else :iso="original_language" />
+            </div>  
             <div class="vote">Score: {{ vote_average}}</div> 
         </div>
     </div>
@@ -14,9 +18,15 @@
 </template>
 
 
+
 <script>
+import FlagIcon from 'vue-flag-icon';
+
 export default {
     name: 'Cards',
+    components:{
+        FlagIcon
+    },
     props: {
         poster_path: String,
         title: String,
@@ -26,7 +36,7 @@ export default {
     },
     computed:{
         generateImg(){
-            return 'https://image.tmdb.org/t/p/w342' + this.poster_path
+            return 'https://image.tmdb.org/t/p/w342' + this.poster_path 
         }
     },
     data(){
