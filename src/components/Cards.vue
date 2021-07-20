@@ -11,7 +11,8 @@
                 <flag v-if="original_language == 'en'" iso="us" />
                 <flag v-else :iso="original_language" />
             </div>  
-            <div class="vote">Score: {{ vote_average}}</div> 
+            <div class="vote">Score: {{ vote_average}}</div>  
+            <i v-for="i in 5" :key="i" class='fa-star' :class=" i <= voteRounded ? 'fas': 'far' "></i>
         </div>
     </div>
 </div>
@@ -39,8 +40,10 @@ export default {
     data(){
         return{
             hover:false,
-        }
-    },
+            voteRounded: Math.round(this.vote_average / 2)
+        }    
+        
+    }
 }
 </script>
 
