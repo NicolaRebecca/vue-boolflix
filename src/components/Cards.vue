@@ -57,7 +57,7 @@ export default {
 
 
     .movie-details{
-        width: 340px;
+        width: 342px;
         text-align: center;
         color:rgb(255, 255, 255);
         position: absolute;
